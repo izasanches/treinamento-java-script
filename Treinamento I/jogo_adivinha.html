@@ -1,0 +1,25 @@
+<meta charset="utf-8">
+
+<input/>
+<button>Verfica</button>
+
+<script>
+
+	var numeroSecreto = 5;
+	var numeroDigitado = document.querySelector("input");
+
+	function verificaNumeroSecreto(){
+
+
+		if (numeroDigitado.value == numeroSecreto){
+			alert("ACERTOU!!");
+		} else {
+			alert("ERROU");
+		}
+
+	}
+
+	var button = document.querySelector("button");
+	button.onclick = verificaNumeroSecreto;
+
+</script>

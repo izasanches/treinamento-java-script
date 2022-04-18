@@ -1,0 +1,29 @@
+<canvas width="600" height="400"></canvas>
+
+<script>
+
+    var tela = document.querySelector('canvas');
+    var pincel = tela.getContext('2d');
+    pincel.fillStyle = 'lightgray';
+    pincel.fillRect(0, 0, 600, 400);
+
+    function desenhaBarra(x, y, serie, cores, texto) { 
+
+        pincel.strokeStyle = 'black';
+
+        for (i = 0; i < serie.length; i++){
+            pincel.fillStyle = cores[i];
+            pincel.fillRect(x, y, 50, serie[i]);  
+            pincel.strokeRect(x, y, 50, serie[i]);    
+            y = y + serie[i];
+        }        
+    }
+
+    var serie2015 = [50, 25, 20, 5];
+    var serie2016 = [65, 20, 13, 2];
+    var cores = ['blue', 'green', 'yellow', 'red'];
+
+    desenhaBarra(50, 50, serie2015, cores, '2015');
+    desenhaBarra(150, 50, serie2016, cores, '2016');
+
+</script>
